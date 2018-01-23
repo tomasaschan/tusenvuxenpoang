@@ -1,0 +1,11 @@
+.left-border {
+    height: 95%;
+    margin: 0;
+    padding: 0 2em 0 0;
+}
+
+@media (max-width: 550px) {
+    .left-border {
+        display: none;
+    }
+}

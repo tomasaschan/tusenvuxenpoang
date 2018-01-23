@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Elegant Typewriter';
+    src: url(./fonts/elegant-typewriter.ttf) format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Antro Vectra';
+    src: url(./fonts/antro-vectra.otf) format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    font-family: 'Elegant Typewriter';
+    color: gray;
+}
+
+#react-root {
+    height: 100%;
+}
+
+h1 {
+    font-family: 'Antro Vectra';
+    font-weight: normal;
+    font-size: 4ex;
+}

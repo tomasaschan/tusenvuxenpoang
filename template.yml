@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  PostAnswer:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: ./post-answer
+      Runtime: nodejs6.10
+      Environment:
+        TABLE_NAME: !Ref AnswersTable
+      Events:
+        PostAnswer:
+          Type: Api
+          Properties:
+            Path: /answers
+            Method: Post
+  PostRsvp:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: ./post-rsvp
+      Runtime: nodejs6.10
+      Timeout: 100
+      Events:
+        PostRsvp:
+          Type: Api
+          Properties:
+            Path: /rsvp
+            Method: Post
+  GetTest:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: ./get-test
+      Runtime: nodejs6.10
+      Events:
+        GetTest:
+          Type: Api
+          Properties:
+            Cors:
+              AllowOrigin: "localhost:3001"
+              AllowHeader: "*"
+            Path: /test
+            Method: Get
+  AnswersTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
