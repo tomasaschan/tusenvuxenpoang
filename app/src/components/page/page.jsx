@@ -19,7 +19,8 @@ const Page = props => {
         key={currentKey}
         classNames='fade'
         timeout={timeout}
-        appear>
+      // appear
+      >
         <section className='content-body'>
           {props.children}
         </section>

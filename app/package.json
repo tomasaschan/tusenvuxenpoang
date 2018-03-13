@@ -5,7 +5,8 @@
     "clean": "cross-env rimraf ../public",
     "prebuild:client": "yarn clean",
     "build": "cross-env NODE_ENV=production CLIENT_PORT=3001 webpack -p",
-    "serve": "webpack-dev-server"
+    "serve": "webpack-dev-server",
+    "start": "yarn serve"
   },
   "main": "src/index.js",
   "author": "tlycken",

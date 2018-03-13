@@ -15,6 +15,9 @@
 }
 
 @media (max-width: 700px) {
+    .content {
+        margin: 10px;
+    }
     .content h1 {
         font-size: 3ex;
     }
@@ -24,22 +27,20 @@
     position: relative;
 }
 
-.fade-appear,
-.fade-enter {
-  opacity: 0;
+.fade-appear, .fade-enter {
+    opacity: 0;
 }
 
-.fade-appear-active,
-.fade-enter-active {
-  transition: opacity .3s linear;
-  opacity: 1;
+.fade-appear-active, .fade-enter-active {
+    transition: opacity .3s linear;
+    opacity: 1;
 }
 
 .fade-exit {
-  transition: opacity .2s linear;
-  opacity: 1;
+    transition: opacity .2s linear;
+    opacity: 1;
 }
 
 .fade-exit-active {
-  opacity: 0;
+    opacity: 0;
 }

@@ -1,4 +1,113 @@
-.embeddedForm {
-  width: 100%;
-  height: 100%;
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  border: none;
+}
+
+.form-control {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-control input {
+  display: block;
+  font-family: 'Elegant Typewriter', 'Courier New', monospace;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.form-control input[type=text] {
+  height: 2ex;
+  /* font-size: 1ex; */
+  font-family: 'Elegant Typewriter', 'Courier New', monospace;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.form-control textarea {
+  height: 80px;
+  width: 250px;
+  font-family: 'Elegant Typewriter', 'Courier New', monospace;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+}
+
+input:focus {
+  outline-width: 0;
+  background-color: rgba(80, 113, 171, 0.12);
+}
+
+.check-control label {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.check-control input {
+  position: absolute;
+  opacity: 0;
+}
+
+.check-control .indicator {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  height: 1.5ex;
+  width: 1.5ex;
+  border-width: 1px;
+  border-color: #5072ab;
+  border-style: solid;
+}
+
+.check-control .indicator:after {
+  width: .75ex;
+  height: .75ex;
+  left: .35ex;
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: none;
+  background: #5072ab;
+}
+
+.check-control label:hover input:not(:checked)~.indicator:after {
+  background-color: #ccc;
+  display: block;
+}
+
+.check-control input:checked~.indicator:after {
+  display: block;
+}
+
+.check-control label.radio .indicator, .check-control label.radio .indicator:after {
+  border-radius: 50%;
+}
+
+.check-control label.checkbox .indicator, .check-control label.checkbox .indicator:after {
+  border-radius: 5%;
+}
+
+form input[type=submit], form button {
+  border-radius: 4px;
+  font-family: 'Elegant Typewriter', 'Courier New', monospace;
+}
+
+form input[type=submit] {
+  height: 5ex;
+  width: 100px;
 }

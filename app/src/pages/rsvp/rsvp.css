@@ -1,3 +1,29 @@
-section.content-body > div {
+section.content-body>div {
   height: 100%;
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+
+.name-line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin-bottom: 5px;
+}
+
+.name-line>input {
+  grid-column: 1;
+}
+
+.name-line>span.add-one, .name-line>span.remove-one {
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.name-line>.add-one {
+  grid-column: 2;
 }
