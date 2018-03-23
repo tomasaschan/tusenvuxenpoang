@@ -111,3 +111,7 @@ form input[type=submit] {
   height: 5ex;
   width: 100px;
 }
+
+.validation {
+  color: red
+}

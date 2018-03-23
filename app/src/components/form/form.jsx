@@ -89,6 +89,7 @@ export class RadioGroup extends React.Component {
         onSelect={this.selectItem} />
 
     return <div>
+      <div className={`validation ${!!this.props.error ? 'error' : ''}`}>{this.props.error}</div>
       {this.props.label}
       {this.props.options.map(option)}
     </div>
@@ -103,5 +104,22 @@ export const Button = props =>
   }}>
     {props.children}</button>
 
-export const SubmitButton = props =>
-  <input type="submit" value={props.text} />
+export class SubmitButton extends React.Component {
+  constructor(props) {
+    super(props)
+    this.submit = this.submit.bind(this)
+  }
+  submit(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    if (this.props.onClick) {
+      this.props.onClick();
+    }
+  }
+
+  render() {
+    return this.props.disabled
+      ? <input type="submit" value={this.props.text} disabled="disabled" />
+      : <input type="submit" value={this.props.text} onClick={this.submit} />
+  }
+}

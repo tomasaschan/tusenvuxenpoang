@@ -1,11 +1,9 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from "redux";
+import { routerReducer as router } from "react-router-redux";
 
-import adultPoints from './adultPoints/adultPoints.js'
-import test from './test/test.js'
-import rsvp from './rsvp/rsvp.js'
+import rsvpFormState from "./rsvpFormState.js";
 
 export default combineReducers({
-    adultPoints,
-    test,
-    rsvp
-})
+  rsvpFormState,
+  router
+});
