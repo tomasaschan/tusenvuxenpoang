@@ -22,7 +22,6 @@ Resources:
           Properties:
             Path: /rsvp
             Method: Post
-            Cors: true
       Environment:
         Variables:
           SpreadsheetId: !Ref SpreadsheetId
