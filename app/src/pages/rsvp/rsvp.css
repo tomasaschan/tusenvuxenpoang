@@ -10,8 +10,9 @@ section.content-body>div {
 
 .name-line {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 20px;
   margin-bottom: 5px;
+  height: 20px;
 }
 
 .name-line>input {

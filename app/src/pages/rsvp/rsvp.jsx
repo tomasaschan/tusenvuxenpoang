@@ -158,9 +158,11 @@ class RsvpForm extends React.Component {
     const names = [...props.names.keys()].map(k => (
       <div className="name-line" key={`name_${k}`}>
         <NameInput name={props.names[k]} onChange={this.updateName(k)} />
-        <span className="remove-one" onClick={this.remove(k)}>
-          <i className="fa fa-minus-square" />
-        </span>
+        {k > 0 ? (
+          <span className="remove-one" onClick={this.remove(k)}>
+            <i className="fa fa-minus-square" />
+          </span>
+        ) : null}
       </div>
     ));
 
