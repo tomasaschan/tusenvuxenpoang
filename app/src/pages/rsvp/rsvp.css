@@ -1,4 +1,4 @@
-section.content-body>div {
+section.content-body > div {
   height: 100%;
 }
 
@@ -15,16 +15,18 @@ section.content-body>div {
   height: 20px;
 }
 
-.name-line>input {
+.name-line > input {
   grid-column: 1;
 }
 
-.name-line>span.add-one, .name-line>span.remove-one {
+.name-line > span.add-one,
+.name-line > span.remove-one {
   font-size: 1.5em;
   cursor: pointer;
   margin-left: 5px;
 }
 
-.name-line>.add-one {
+.name-line > .add-one,
+.name-line > .remove-one {
   grid-column: 2;
 }
