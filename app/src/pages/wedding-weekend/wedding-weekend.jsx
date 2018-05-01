@@ -1,5 +1,4 @@
 import React from "react";
-import "./wedding-weekend.css";
 
 export default () => (
   <div>
