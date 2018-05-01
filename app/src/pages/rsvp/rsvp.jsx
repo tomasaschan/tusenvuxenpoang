@@ -1,6 +1,6 @@
-import React from "react";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { connect } from "react-redux";
+import React from 'react'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import { connect } from 'react-redux'
 
 import {
   Form,
@@ -11,74 +11,74 @@ import {
   SubmitButton,
   NumberTextBox,
   Button
-} from "../../components/form/form.jsx";
-import "./rsvp.css";
+} from '../../components/form/form.jsx'
+import './rsvp.css'
 
-import { postRsvp } from "../../store/middleware/post-rsvp";
+import { postRsvp } from '../../store/middleware/post-rsvp'
 
-const timeout = { enter: 300, exit: 0 };
+const timeout = { enter: 300, exit: 0 }
 
 class NameInput extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   componentDidMount() {
-    this.input.focus();
+    this.input.focus()
   }
 
   render() {
     return (
       <input
         ref={input => {
-          this.input = input;
+          this.input = input
         }}
         name="namn"
         type="text"
         value={this.props.name}
         onChange={this.props.onChange}
       />
-    );
+    )
   }
 }
 
 class RsvpForm extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      names: [""],
-      attending: "not specified",
+      names: [''],
+      attending: 'not specified',
       errors: {
-        names: "",
-        attending: "",
-        staying: ""
+        names: '',
+        attending: '',
+        staying: ''
       }
-    };
+    }
 
-    this.updateName = this.updateName.bind(this);
-    this.addOne = this.addOne.bind(this);
-    this.remove = this.remove.bind(this);
-    this.setAttending = this.setAttending.bind(this);
-    this.setFoods = this.setFoods.bind(this);
-    this.setStaying = this.setStaying.bind(this);
-    this.submit = this.submit.bind(this);
+    this.updateName = this.updateName.bind(this)
+    this.addOne = this.addOne.bind(this)
+    this.remove = this.remove.bind(this)
+    this.setAttending = this.setAttending.bind(this)
+    this.setFoods = this.setFoods.bind(this)
+    this.setStaying = this.setStaying.bind(this)
+    this.submit = this.submit.bind(this)
   }
 
   updateName(k) {
     return ({ target: { value } }) => {
       this.setState(prev => {
-        const names = [...prev.names];
-        names[k] = value;
-        return { names };
-      }, this.validate());
-    };
+        const names = [...prev.names]
+        names[k] = value
+        return { names }
+      }, this.validate())
+    }
   }
 
   addOne() {
     this.setState(
-      prev => Object.assign({}, prev, { names: [...prev.names, ""] }),
+      prev => Object.assign({}, prev, { names: [...prev.names, ''] }),
       this.validate()
-    );
+    )
   }
 
   remove(k) {
@@ -89,71 +89,71 @@ class RsvpForm extends React.Component {
             names: prev.names.filter((n, i) => i !== k)
           }),
         this.validate()
-      );
+      )
   }
 
   setStaying(staying) {
-    this.setState({ staying }, this.validate());
+    this.setState({ staying }, this.validate())
   }
 
   setFoods(e) {
-    this.setState({ foods: e.target.value }, this.validate());
+    this.setState({ foods: e.target.value }, this.validate())
   }
 
   setAttending(attending) {
-    this.setState({ attending }, this.validate());
+    this.setState({ attending }, this.validate())
   }
 
   validate(callback) {
     return () => {
       if (!this.state.submitted) {
-        return;
+        return
       }
-      const you = this.state.names.length > 1 ? "ni" : "du";
-      const errors = {};
+      const you = this.state.names.length > 1 ? 'ni' : 'du'
+      const errors = {}
       if (
         this.state.names.length === 0 ||
         this.state.names.filter(n => n.length === 0).length > 0
       ) {
         errors.names =
           this.state.names.length <= 1
-            ? "Du måste säga vem du är!"
-            : "Ni måste säga vilka ni är!";
+            ? 'Du måste säga vem du är!'
+            : 'Ni måste säga vilka ni är!'
       }
-      if (this.state.attending === "not specified") {
-        errors.attending = `Kommer ${you} eller inte?`;
-      } else if (this.state.attending === "ja") {
+      if (this.state.attending === 'not specified') {
+        errors.attending = `Kommer ${you} eller inte?`
+      } else if (this.state.attending === 'ja') {
         if (this.state.staying === undefined) {
-          errors.staying = `Vi behöver veta om ${you} vill sova på Granhedsgården!`;
+          errors.staying = `Vi behöver veta om ${you} vill sova på Granhedsgården!`
         }
       }
-      this.setState({ errors }, callback);
-    };
+      this.setState({ errors }, callback)
+    }
   }
 
   submit() {
     this.setState(
       { submitted: true },
       this.validate(() => {
-        if (Object.values(this.state.errors).join("").length === 0) {
-          const { names, attending, staying, foods } = this.state;
-          this.props.submit({ names, attending, staying, foods });
+        if (Object.values(this.state.errors).join('').length === 0) {
+          const { names, attending, staying, foods } = this.state
+          this.props.submit({ names, attending, staying, foods })
         }
       })
-    );
+    )
   }
 
   render() {
     const props = {
       ...this.props,
       ...this.state
-    };
-    const multi = props.names.length >= 2;
-    const you = !multi ? "du" : "ni";
-    const ime = !multi ? "jag" : "vi";
-    const showAttending = props.attending === "ja";
-    const showNotAttending = props.attending === "nej";
-    const showSubmit = showAttending || showNotAttending;
+    }
+    const multi = props.names.length >= 2
+    const you = !multi ? 'du' : 'ni'
+    const ime = !multi ? 'jag' : 'vi'
+    const showAttending = props.attending === 'ja'
+    const showNotAttending = props.attending === 'nej'
+    const showSubmit = showAttending || showNotAttending
 
     const names = [...props.names.keys()].map(k => (
       <div className="name-line" key={`name_${k}`}>
@@ -164,7 +164,7 @@ class RsvpForm extends React.Component {
           </span>
         ) : null}
       </div>
-    ));
+    ))
 
     return (
       <div>
@@ -172,7 +172,7 @@ class RsvpForm extends React.Component {
           <div className="form-control">
             <label>
               <div
-                className={`validation ${!!props.errors.names ? "error" : ""}`}
+                className={`validation ${!!props.errors.names ? 'error' : ''}`}
               >
                 {props.errors.names}
               </div>
@@ -193,8 +193,8 @@ class RsvpForm extends React.Component {
             name="rsvp"
             error={props.errors.attending}
             options={[
-              { value: "ja", text: `Klart ${ime} gör!` },
-              { value: "nej", text: `Nej, ${ime} kan inte :(` }
+              { value: 'ja', text: `Klart ${ime} gör!` },
+              { value: 'nej', text: `Nej, ${ime} kan inte :(` }
             ]}
             onSelect={this.setAttending}
             selected={props.attending}
@@ -204,10 +204,10 @@ class RsvpForm extends React.Component {
             <CSSTransition
               key={`attending_${props.attending}`}
               classNames={{
-                appear: "fade-appear",
-                enter: "fade-enter",
-                enterActive: "fade-enter-active",
-                appearActive: "fade-appear-active"
+                appear: 'fade-appear',
+                enter: 'fade-enter',
+                enterActive: 'fade-enter-active',
+                appearActive: 'fade-appear-active'
               }}
               timeout={timeout}
             >
@@ -219,21 +219,21 @@ class RsvpForm extends React.Component {
                     <TextArea
                       name="food"
                       label={`Har ${
-                        multi ? "ni" : "du"
+                        multi ? 'ni' : 'du'
                       } några specialmatsbehov?`}
                       onChange={this.setFoods}
                     />
                     <RadioGroup
                       label={`Vill ${
-                        props.multi ? "ni" : "du"
+                        props.multi ? 'ni' : 'du'
                       } bo på Granhedsgården natten 1-2 september?`}
                       error={props.errors.staying}
                       onSelect={this.setStaying}
                       options={[
-                        { value: "ja", text: "Ja, gärna!" },
+                        { value: 'ja', text: 'Ja, gärna!' },
                         {
-                          value: "nej",
-                          text: "Nej, vi sover någon annanstans."
+                          value: 'nej',
+                          text: 'Nej, vi sover någon annanstans.'
                         }
                       ]}
                     />
@@ -242,7 +242,7 @@ class RsvpForm extends React.Component {
                 {showNotAttending && (
                   <div>
                     <p>
-                      Vad tråkigt! Vi kommer sakna {multi ? "er" : "dig"}. Men
+                      Vad tråkigt! Vi kommer sakna {multi ? 'er' : 'dig'}. Men
                       vi hoppas att vi ses nån annan gång!
                     </p>
                   </div>
@@ -251,7 +251,7 @@ class RsvpForm extends React.Component {
                   <SubmitButton
                     text="Svara"
                     onClick={this.submit}
-                    disabled={Object.values(props.errors).join("").length > 0}
+                    disabled={Object.values(props.errors).join('').length > 0}
                   />
                 )}
               </div>
@@ -259,15 +259,15 @@ class RsvpForm extends React.Component {
           </TransitionGroup>
         </Form>
       </div>
-    );
+    )
   }
 }
 
 const stateToProps = state => ({
   rsvpFormState: state.rsvpFormState
-});
+})
 const dispatchToProps = dispatch => ({
   submit: postRsvp(dispatch)
-});
+})
 
-export default connect(stateToProps, dispatchToProps)(RsvpForm);
+export default connect(stateToProps, dispatchToProps)(RsvpForm)

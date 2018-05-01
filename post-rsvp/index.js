@@ -1,7 +1,7 @@
-const sheets = require("./sheets");
+const sheets = require('./sheets')
 
 exports.handler = (event, context, callback) => {
-  const data = JSON.parse(event.body);
+  const data = JSON.parse(event.body)
   sheets
     .authenticate()
     .then(doc => {
@@ -12,14 +12,19 @@ exports.handler = (event, context, callback) => {
           Granhedsgården: data.staying,
           Mat: data.foods
         }))
-        .map(sheets.addRow(doc));
-      return Promise.all(lines);
+        .map(sheets.addRow(doc))
+      return Promise.all(lines)
     })
     .then(() =>
       callback(null, {
-        body: "OK",
+        body: JSON.stringify('OK'),
         statusCode: 200
       })
     )
-    .catch(callback);
-};
+    .catch(err => {
+      callback(err, {
+        body: JSON.stringify({ message: `Error: ${err.message}` }),
+        statusCode: 500
+      })
+    })
+}

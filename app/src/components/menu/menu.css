@@ -47,11 +47,11 @@ nav ul li a:hover {
     justify-content: space-evenly;
   }
   nav ul li a {
-    content: "";
+    content: '';
   }
   nav ul li::after {
-    content: "\f015";
-    font-family: "Font Awesome 5 Solid";
+    content: '\f015';
+    font-family: 'Font Awesome 5 Solid';
     display: none;
   }
 }

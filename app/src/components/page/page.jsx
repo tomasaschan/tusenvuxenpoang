@@ -10,23 +10,23 @@ const timeout = { enter: 300, exit: 200 }
 const Page = props => {
   const currentKey = location.pathname.split('/')[1] || '/'
 
-  return (<div className="content">
-    <h1 className="page-header">Tusen vuxenpoäng</h1>
-    <Menu links={props.menuItems} />
+  return (
+    <div className="content">
+      <h1 className="page-header">Tusen vuxenpoäng</h1>
+      <Menu links={props.menuItems} />
 
-    <TransitionGroup component='main' className='main'>
-      <CSSTransition
-        key={currentKey}
-        classNames='fade'
-        timeout={timeout}
-      // appear
-      >
-        <section className='content-body'>
-          {props.children}
-        </section>
-      </CSSTransition>
-    </TransitionGroup>
-  </div>)
+      <TransitionGroup component="main" className="main">
+        <CSSTransition
+          key={currentKey}
+          classNames="fade"
+          timeout={timeout}
+          // appear
+        >
+          <section className="content-body">{props.children}</section>
+        </CSSTransition>
+      </TransitionGroup>
+    </div>
+  )
 }
 
 Page.propTypes = {

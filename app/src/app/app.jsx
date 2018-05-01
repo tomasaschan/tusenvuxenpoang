@@ -1,12 +1,12 @@
-import React from "react";
-import { AppContainer } from "react-hot-loader";
-import { BrowserRouter, Route, Switch, withRouter } from "react-router-dom";
-import { ConnectedRouter } from "react-router-redux";
+import React from 'react'
+import { AppContainer } from 'react-hot-loader'
+import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
+import { ConnectedRouter } from 'react-router-redux'
 
-import * as Components from "../components/components.jsx";
-import { menuItems, Thanks, Oops, NotFound } from "../pages/pages.jsx";
+import * as Components from '../components/components.jsx'
+import { menuItems, Thanks, Oops, NotFound } from '../pages/pages.jsx'
 
-import "./app.css";
+import './app.css'
 
 let Content = withRouter(({ location, menuItems }) => (
   <Components.Page menuItems={menuItems}>
@@ -26,7 +26,7 @@ let Content = withRouter(({ location, menuItems }) => (
       <Route component={NotFound} />
     </Switch>
   </Components.Page>
-));
+))
 
 const App = props => (
   <div className="app">
@@ -37,6 +37,6 @@ const App = props => (
       </ConnectedRouter>
     </AppContainer>
   </div>
-);
+)
 
-export default App;
+export default App

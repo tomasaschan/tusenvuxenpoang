@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 
 export default () => (
   <div>
     <h2>Övernattning</h2>
     <p className="small">
-      För övernattning mellan lördagen och söndagen föreslår vi{" "}
+      För övernattning mellan lördagen och söndagen föreslår vi{' '}
       <a href="http://www.granhedsgarden.se/">Granhedsgården</a>, som ligger
       granne med Sjöviken. Det är en kursgård, med rum av olika storlek och
       karaktär, men huvudsakligen vandrarhemsstandard. Vi har reserverat hela
-      gården, så där finns plats för alla!{" "}
+      gården, så där finns plats för alla!{' '}
     </p>
 
     <p className="small">
@@ -33,4 +33,4 @@ export default () => (
       dit på natten på egen hand!
     </p>
   </div>
-);
+)

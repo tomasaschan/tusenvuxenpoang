@@ -1,11 +1,11 @@
 .left-border {
-    height: 95%;
-    margin: 0;
-    padding: 0 2em 0 0;
+  height: 95%;
+  margin: 0;
+  padding: 0 2em 0 0;
 }
 
 @media only screen and (max-width: 768px) {
-    .left-border {
-        display: none;
-    }
+  .left-border {
+    display: none;
+  }
 }

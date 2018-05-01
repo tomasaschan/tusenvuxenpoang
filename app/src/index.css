@@ -1,13 +1,13 @@
 @font-face {
-  font-family: "Elegant Typewriter";
-  src: url(./fonts/elegant-typewriter.ttf) format("truetype");
+  font-family: 'Elegant Typewriter';
+  src: url(./fonts/elegant-typewriter.ttf) format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Antro Vectra";
-  src: url(./fonts/antro-vectra.otf) format("opentype");
+  font-family: 'Antro Vectra';
+  src: url(./fonts/antro-vectra.otf) format('opentype');
   font-weight: 600;
   font-style: normal;
 }
@@ -21,7 +21,7 @@ body,
   height: 100%;
   font-size: 1.6ex;
 
-  font-family: "Elegant Typewriter";
+  font-family: 'Elegant Typewriter';
   color: black;
 }
 
@@ -30,13 +30,13 @@ body,
 }
 
 h1 {
-  font-family: "Antro Vectra";
+  font-family: 'Antro Vectra';
   font-weight: normal;
   font-size: 4ex;
 }
 
 h3 {
-  font-family: "Antro Vectra";
+  font-family: 'Antro Vectra';
   font-size: 2ex;
   margin-bottom: 0;
   margin-top: 2ex;
