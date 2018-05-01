@@ -1,55 +1,57 @@
 nav {
-    border-bottom: 1px dashed grey;
-    padding-bottom: 5px;
+  border-bottom: 1px dashed grey;
+  padding-bottom: 5px;
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
 }
 
 nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+  display: inline-block;
+  margin-right: 20px;
 }
 
 nav ul li:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: grey;
+  text-decoration: none;
+  color: grey;
 }
 
-nav ul li a.active, nav ul li a:hover {
-    color: black;
+nav ul li a.active,
+nav ul li a:hover {
+  color: black;
 }
 
 @media only screen and (max-width: 768px) {
-    nav {
-        /* background: blue; */
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        border-bottom: none;
-        width: 100%;
-        border-top: 1px dashed grey;
-    }
-    nav ul {
-        display: flex;
-        justify-content: space-evenly;
-    }
-    nav ul li a {
-        content: "";
-    }
-    nav ul li::after {
-        content: "\f015";
-        font-family: 'Font Awesome 5 Solid';
-        display: none;
-    }
+  nav {
+    /* background: blue; */
+    position: fixed;
+    background: white;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border-bottom: none;
+    width: 100%;
+    border-top: 1px dashed grey;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  nav ul li a {
+    content: "";
+  }
+  nav ul li::after {
+    content: "\f015";
+    font-family: "Font Awesome 5 Solid";
+    display: none;
+  }
 }
