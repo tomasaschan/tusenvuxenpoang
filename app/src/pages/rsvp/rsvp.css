@@ -11,7 +11,7 @@ section.content-body > div {
 .name-line {
   display: grid;
   grid-template-columns: 1fr 20px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   height: 20px;
 }
 
@@ -24,9 +24,14 @@ section.content-body > div {
   font-size: 1.5em;
   cursor: pointer;
   margin-left: 5px;
+  grid-column: 2;
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  align-items: center;
 }
 
-.name-line > .add-one,
-.name-line > .remove-one {
-  grid-column: 2;
+.name-line svg {
+  height: 1.2ex;
+  color: grey;
 }
