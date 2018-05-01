@@ -5,5 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "google-spreadsheet": "^2.0.4"
+  },
+  "scripts": {
+    "build": "zip -FSr ../post-rsvp.zip ."
   }
 }
