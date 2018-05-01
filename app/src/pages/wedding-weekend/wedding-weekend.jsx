@@ -9,7 +9,7 @@ export default () => (
       <dt>15:30</dt>
       <dd>
         Vigsel på Sjöviken<br />
-        <span className="small">
+        <span className="secondary">
           Om vädret inte sätter käppar i hjulen sker vigseln utomhus, så välj
           passande skor!
         </span>
@@ -17,7 +17,7 @@ export default () => (
       <dt>18.00</dt>
       <dd>
         Middag och fest i Kolhuset i Hälleforsnäs<br />
-        <span className="small">
+        <span className="secondary">
           Bussar kör oss dit från Sjöviken, och tillbaka till Granhedsgården på
           natten
         </span>
