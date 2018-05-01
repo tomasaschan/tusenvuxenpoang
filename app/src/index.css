@@ -38,9 +38,12 @@ h1 {
 h3 {
   font-family: "Antro Vectra";
   font-size: 2ex;
+  margin-bottom: 0;
+  margin-top: 2ex;
 }
 
 dl {
+  margin-top: 0;
   display: grid;
   grid-template-columns: max-content auto;
 }
@@ -53,4 +56,8 @@ dt {
 dd {
   grid-column-start: 2;
   padding-bottom: 2ex;
+}
+
+.small {
+  font-size: 1ex;
 }
