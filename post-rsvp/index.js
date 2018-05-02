@@ -9,6 +9,7 @@ exports.handler = (event, context, callback) => {
         .map(name => ({
           Namn: name,
           Kommer: data.attending,
+          Epost: data.email,
           Granhedsgården: data.staying,
           Mat: data.foods
         }))

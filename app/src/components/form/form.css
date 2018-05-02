@@ -23,12 +23,13 @@ fieldset {
   border-radius: 5px;
 }
 
-.form-control input[type=text] {
+.form-control input[type='text'] {
   height: 2ex;
   /* font-size: 1ex; */
   font-family: 'Elegant Typewriter', 'Courier New', monospace;
   padding: 5px;
   border-radius: 5px;
+  width: 250px;
 }
 
 .form-control textarea {

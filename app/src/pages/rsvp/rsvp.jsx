@@ -48,14 +48,17 @@ class RsvpForm extends React.Component {
     this.state = {
       names: [''],
       attending: 'not specified',
+      email: '',
       errors: {
         names: '',
+        email: '',
         attending: '',
         staying: ''
       }
     }
 
     this.updateName = this.updateName.bind(this)
+    this.setEmail = this.setEmail.bind(this)
     this.addOne = this.addOne.bind(this)
     this.remove = this.remove.bind(this)
     this.setAttending = this.setAttending.bind(this)
@@ -72,6 +75,10 @@ class RsvpForm extends React.Component {
         return { names }
       }, this.validate())
     }
+  }
+
+  setEmail(e) {
+    this.setState({ email: e.target.value }, this.validate())
   }
 
   addOne() {
@@ -109,7 +116,8 @@ class RsvpForm extends React.Component {
       if (!this.state.submitted) {
         return
       }
-      const you = this.state.names.length > 1 ? 'ni' : 'du'
+      const multi = this.state.names.length > 1
+      const you = multi ? 'ni' : 'du'
       const errors = {}
       if (
         this.state.names.length === 0 ||
@@ -123,6 +131,11 @@ class RsvpForm extends React.Component {
       if (this.state.attending === 'not specified') {
         errors.attending = `Kommer ${you} eller inte?`
       } else if (this.state.attending === 'ja') {
+        if (this.state.email.length === 0) {
+          errors.email = `Vi behöver ett sett att kontakta ${
+            multi ? 'er' : 'dig'
+          }!`
+        }
         if (this.state.staying === undefined) {
           errors.staying = `Vi behöver veta om ${you} vill sova på Granhedsgården!`
         }
@@ -136,8 +149,8 @@ class RsvpForm extends React.Component {
       { submitted: true },
       this.validate(() => {
         if (Object.values(this.state.errors).join('').length === 0) {
-          const { names, attending, staying, foods } = this.state
-          this.props.submit({ names, attending, staying, foods })
+          const { names, email, attending, staying, foods } = this.state
+          this.props.submit({ names, email, attending, staying, foods })
         }
       })
     )
@@ -216,6 +229,11 @@ class RsvpForm extends React.Component {
                   <div>
                     <p>Hurra, vad roligt!</p>
                     <p>Då behöver vi veta lite mer:</p>
+                    <TextBox
+                      name="email"
+                      label={`Epost${multi ? ' (till någon av er)' : ''}:`}
+                      onChange={this.setEmail}
+                    />
                     <TextArea
                       name="food"
                       label={`Har ${
