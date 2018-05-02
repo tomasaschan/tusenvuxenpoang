@@ -73,10 +73,10 @@ input:focus {
 }
 
 .check-control .indicator:after {
-  width: .75ex;
-  height: .75ex;
-  left: .35ex;
-  content: "";
+  width: 0.75ex;
+  height: 0.75ex;
+  left: 0.35ex;
+  content: '';
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -86,33 +86,36 @@ input:focus {
   background: #5072ab;
 }
 
-.check-control label:hover input:not(:checked)~.indicator:after {
+.check-control label:hover input:not(:checked) ~ .indicator:after {
   background-color: #ccc;
   display: block;
 }
 
-.check-control input:checked~.indicator:after {
+.check-control input:checked ~ .indicator:after {
   display: block;
 }
 
-.check-control label.radio .indicator, .check-control label.radio .indicator:after {
+.check-control label.radio .indicator,
+.check-control label.radio .indicator:after {
   border-radius: 50%;
 }
 
-.check-control label.checkbox .indicator, .check-control label.checkbox .indicator:after {
+.check-control label.checkbox .indicator,
+.check-control label.checkbox .indicator:after {
   border-radius: 5%;
 }
 
-form input[type=submit], form button {
+form input[type='submit'],
+form button {
   border-radius: 4px;
   font-family: 'Elegant Typewriter', 'Courier New', monospace;
 }
 
-form input[type=submit] {
+form input[type='submit'] {
   height: 5ex;
   width: 100px;
 }
 
 .validation {
-  color: red
+  color: red;
 }
