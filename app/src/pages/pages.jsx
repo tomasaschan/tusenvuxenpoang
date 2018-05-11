@@ -9,6 +9,6 @@ export { default as Thanks } from './rsvp/thanks.jsx'
 export const menuItems = [
   { url: '/', text: 'Hem', component: Home, exact: true },
   { url: '/brollopshelgen', text: 'Bröllopshelgen', component: WeddingWeekend },
-  { url: '/accommodation', text: 'Övernattning', component: Accommodation },
+  { url: '/overnattning', text: 'Övernattning', component: Accommodation },
   { url: '/osa', text: 'O.S.A.', component: Rsvp }
 ]
