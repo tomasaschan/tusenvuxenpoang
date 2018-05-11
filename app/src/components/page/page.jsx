@@ -11,20 +11,22 @@ const Page = props => {
   const currentKey = location.pathname.split('/')[1] || '/'
 
   return (
-    <div className="content">
-      <h1 className="page-header">Tusen vuxenpoäng</h1>
+    <div id="content" className="content">
       <Menu links={props.menuItems} />
+      <div id="main">
+        <h1 className="page-header">Tusen vuxenpoäng</h1>
 
-      <TransitionGroup component="main" className="main">
-        <CSSTransition
-          key={currentKey}
-          classNames="fade"
-          timeout={timeout}
-          // appear
-        >
-          <section className="content-body">{props.children}</section>
-        </CSSTransition>
-      </TransitionGroup>
+        <TransitionGroup component="main" className="main">
+          <CSSTransition
+            key={currentKey}
+            classNames="fade"
+            timeout={timeout}
+            // appear
+          >
+            <section className="content-body">{props.children}</section>
+          </CSSTransition>
+        </TransitionGroup>
+      </div>
     </div>
   )
 }

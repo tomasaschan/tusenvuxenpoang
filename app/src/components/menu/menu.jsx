@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
+import MobileMenu from 'react-burger-menu/lib/menus/slide'
+
+import './burger-menu.css'
 import './menu.css'
 
 const MenuItem = props => (
@@ -17,9 +20,20 @@ MenuItem.propTypes = {
 }
 
 const Menu = props => (
-  <nav>
-    <ul>{props.links.map((l, i) => <MenuItem key={i} {...l} />)}</ul>
-  </nav>
+  <div>
+    <nav className="full-menu">
+      <ul>{props.links.map((l, i) => <MenuItem key={i} {...l} />)}</ul>
+    </nav>
+    <MobileMenu
+      className="mobile-menu"
+      pageWrapId="main"
+      outerContainerId="content"
+      right
+      isOpen
+    >
+      <ul>{props.links.map((l, i) => <MenuItem key={i} {...l} />)}</ul>
+    </MobileMenu>
+  </div>
 )
 
 Menu.propTypes = {

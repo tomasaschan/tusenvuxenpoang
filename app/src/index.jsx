@@ -22,7 +22,7 @@ const run = () => {
 
   render(
     <Provider store={store}>
-      <App history={history} />
+      <App history={history} id="app" />
     </Provider>,
     document.getElementById('react-root')
   )

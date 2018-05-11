@@ -25,33 +25,15 @@ nav ul li a {
   color: grey;
 }
 
-nav ul li a.active,
-nav ul li a:hover {
+nav ul li a.active, nav ul li a:hover {
   color: black;
 }
 
 @media only screen and (max-width: 768px) {
-  nav {
-    /* background: blue; */
-    position: fixed;
-    background: white;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    border-bottom: none;
-    width: 100%;
-    border-top: 1px dashed grey;
-  }
-  nav ul {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  nav ul li a {
-    content: '';
-  }
-  nav ul li::after {
-    content: '\f015';
-    font-family: 'Font Awesome 5 Solid';
+  nav.full-menu {
     display: none;
+  }
+  .mobile-menu li {
+    margin-bottom: 15px;
   }
 }
