@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Elegant Typewriter';
-  src: url(./fonts/elegant-typewriter.ttf) format('truetype');
+  src: url(./fonts/elegant-typewriter.woff) format('woff');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Antro Vectra';
-  src: url(./fonts/antro-vectra.otf) format('opentype');
+  src: url(./fonts/antro-vectra.woff) format('woff');
   font-weight: 600;
   font-style: normal;
 }
