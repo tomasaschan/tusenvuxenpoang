@@ -12,15 +12,12 @@
   font-style: normal;
 }
 
-html,
-body,
-#root {
+html, body, #root {
   margin: 0;
   padding: 0;
   padding-right: 10px;
   height: 100%;
   font-size: 1.6ex;
-
   font-family: 'Elegant Typewriter';
   color: black;
 }
