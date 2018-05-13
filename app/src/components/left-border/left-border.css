@@ -1,5 +1,5 @@
 .app {
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 15% 1fr;
 }
 
 .left-border {
@@ -7,6 +7,11 @@
   margin: 0;
   padding: 0 2em 0 0;
   grid-column: 1;
+  width: 100%;
+}
+
+.left-border>img {
+  width: 100%;
 }
 
 @media only screen and (max-width: 768px) {

@@ -3,5 +3,14 @@ section.content-body {
   max-width: 800px;
 }
 
+@media only screen and (min-width: 769px) {
+  .page-header.mobile {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 768px) {
+  .page-header:not(.mobile) {
+    display: none;
+  }
 }

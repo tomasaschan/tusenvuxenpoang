@@ -12,9 +12,10 @@ const Page = props => {
 
   return (
     <div id="content" className="content">
+      <h1 className="page-header">Tusen vuxenpoäng</h1>
       <Menu links={props.menuItems} />
       <div id="main">
-        <h1 className="page-header">Tusen vuxenpoäng</h1>
+        <h1 className="page-header mobile">Tusen vuxenpoäng</h1>
 
         <TransitionGroup component="main" className="main">
           <CSSTransition

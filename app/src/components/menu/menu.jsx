@@ -29,7 +29,6 @@ const Menu = props => (
       pageWrapId="main"
       outerContainerId="content"
       right
-      isOpen
     >
       <ul>{props.links.map((l, i) => <MenuItem key={i} {...l} />)}</ul>
     </MobileMenu>
