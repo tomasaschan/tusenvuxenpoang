@@ -41,10 +41,12 @@
     "react": "^15.6.1",
     "react-burger-menu": "^2.4.4",
     "react-dom": "^15.6.1",
+    "react-google-maps": "^9.4.5",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.2",
     "react-router-redux": "^5.0.0-alpha.9",
     "react-transition-group": "^2.2.1",
+    "recompose": "^0.27.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "whatwg-fetch": "^2.0.3"
