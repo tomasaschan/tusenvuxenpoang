@@ -1,0 +1,36 @@
+.home {
+  margin: 20px;
+  width: 400px;
+}
+
+.home>p {
+  text-align: center;
+}
+
+.home-names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.name-badge {
+  color: #6c799c;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-between;
+  font-size: 2rem;
+}
+
+.name-badge>.middle {
+  font-family: 'Antro Vectra';
+  font-size: .8rem;
+  margin-top: -.2ex;
+  margin-bottom: -.8ex;
+}
+
+.heart {
+  width: 75px;
+}

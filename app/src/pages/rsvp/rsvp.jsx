@@ -251,7 +251,9 @@ class RsvpForm extends React.Component {
                         { value: 'ja', text: 'Ja, gärna!' },
                         {
                           value: 'nej',
-                          text: 'Nej, vi sover någon annanstans.'
+                          text: `Nej, ${
+                            props.multi ? 'vi' : 'jag'
+                          } sover någon annanstans.`
                         }
                       ]}
                     />
