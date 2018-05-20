@@ -1,5 +1,8 @@
 section.content-body {
   width: 100%;
+}
+
+section.content-body>div:not(.page-with-image) {
   max-width: 800px;
 }
 
