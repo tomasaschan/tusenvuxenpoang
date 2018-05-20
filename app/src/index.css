@@ -17,7 +17,7 @@ html, body, #root {
   padding: 0;
   padding-right: 10px;
   height: 100%;
-  font-size: 1.6ex;
+  font-size: 1.2rem;
   font-family: 'Elegant Typewriter';
   color: black;
 }
@@ -29,18 +29,24 @@ html, body, #root {
 h1 {
   font-family: 'Antro Vectra';
   font-weight: normal;
-  font-size: 4ex;
+  font-size: 4rem;
 }
 
 h3 {
   font-family: 'Antro Vectra';
-  font-size: 2ex;
+  font-size: 2rem;
   margin-bottom: 0;
-  margin-top: 2ex;
+  margin-top: 2rem;
 }
 
-h3~p {
+h3~p, h4~p {
   margin-top: 0;
+}
+
+h4 {
+  font-family: 'Antro Vectra';
+  font-size: 1.5rem;
+  margin-bottom: 0;
 }
 
 dl {
