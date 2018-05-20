@@ -5,16 +5,18 @@ const path = require('path'),
 
 const PORT = process.env.CLIENT_PORT || 3001
 
-const entries =
-  process.env.NODE_ENV === 'production'
-    ? ['react-hot-loader/patch', 'whatwg-fetch', './src/index.jsx']
-    : [
-        'react-hot-loader/patch',
-        `webpack-dev-server/client?http://0.0.0.0:${PORT}`,
-        'webpack/hot/only-dev-server',
-        'whatwg-fetch',
-        './src/index.jsx'
-      ]
+const devEntries = [
+  `webpack-dev-server/client?http://0.0.0.0:${PORT}`,
+  'webpack/hot/only-dev-server'
+]
+
+const entries = [
+  ...(process.env.NODE_ENV === 'production' ? [] : devEntries),
+  'babel-polyfill',
+  'react-hot-loader/patch',
+  'whatwg-fetch',
+  './src/index.jsx'
+]
 
 module.exports = {
   entry: entries,
